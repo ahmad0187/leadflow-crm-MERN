@@ -1,0 +1,16 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes: [mongo-data:/data/db]
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on: [mongo]
+    ports: ["4000:4000"]
+    environment:
+      MONGO_URL: mongodb://mongo:27017/leadflow
+      JWT_SECRET: ${JWT_SECRET:-please-change-me}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+volumes:
+  mongo-data:

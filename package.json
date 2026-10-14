@@ -1,0 +1,17 @@
+{
+  "name": "leadflow-crm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered sales CRM built with the MERN stack (MongoDB, Express, React, Node.js).",
+  "license": "MIT",
+  "author": "Ahmad Murtaza",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "seed": "npm --prefix server run seed",
+    "test": "npm --prefix server test",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start"
+  }
+}
